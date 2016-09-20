@@ -1,0 +1,26 @@
+ <h2><%= link_to_unless_current post.title, post %></h2>
+
+
+
+
+<% if controller.action_name == "show" %>
+ 	<%= simple_format post.body %>
+ 	<p>
+ 		<%= link_to 'Edit', edit_post_path(post) %> |
+		<%= link_to 'Back', posts_path %>
+ 	</p>
+<% end %>
+
+<% if controller.action_name == "index" %>
+	<% post.body.lines.first(5).each do |line| %>
+		<%= line %><br/>
+	<% end %>
+	<% if post.body.lines.length >= 5 %>
+		<%= link_to_unless_current '... ...', post %><br/>
+	<% end %>
+
+	<p>
+		<%= link_to 'Edit', edit_post_path(post) %> |
+		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+	</p>
+<% end %>
