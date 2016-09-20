@@ -1,7 +1,5 @@
+<%= post.created_at.strftime("%d %b %y") %><br/>
  <h2><%= link_to_unless_current post.title, post %></h2>
-
-
-
 
 <% if controller.action_name == "show" %>
  	<%= simple_format post.body %>
