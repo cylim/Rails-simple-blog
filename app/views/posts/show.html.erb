@@ -21,9 +21,9 @@
 
 <h2>Comments</h2>
 <div id="comments">
-	<%= render partial: @post.comments %>
+	<%= render partial: @post.comments.reverse %>
 
-	<%= form_for [@post, Comment.new] do |f| %>
+	<%= form_for [@post, Comment.new], remote: true do |f| %>
 		<p>
 			<%= f.label :body, "New comment" %> <br/>
 			<%= f.text_area :body %>

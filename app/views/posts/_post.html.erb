@@ -10,13 +10,14 @@
 <% end %>
 
 <% if controller.action_name == "index" %>
+	<div>
 	<% post.body.lines.first(5).each do |line| %>
-		<%= line %><br/>
+		<%= simple_format line %>
 	<% end %>
 	<% if post.body.lines.length >= 5 %>
 		<%= link_to_unless_current '... ...', post %><br/>
 	<% end %>
-
+	</div>
 	<p>
 		<%= link_to 'Edit', edit_post_path(post) %> |
 		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
