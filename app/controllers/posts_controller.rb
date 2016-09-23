@@ -4,8 +4,15 @@ class PostsController < ApplicationController
 
   # GET /posts
   # GET /posts.json
+  # GET /posts.atom
   def index
     @posts = Post.all
+
+    respond_to do  |format|
+      format.html
+      format.json { render json: @posts }
+      format.atom
+    end
   end
 
   # GET /posts/1
@@ -66,7 +73,7 @@ class PostsController < ApplicationController
     # Set Authentication for function except show
     def authenticate
       authenticate_or_request_with_http_basic do |name, password|
-        name == "admin" && password == "secret"
+        name == "cy" && password == "installfest"
       end
     end
     
