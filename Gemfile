@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 gem 'record_tag_helper', '~> 1.0'
 gem 'responders', '~> 2.0'
+gem 'foundation-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
