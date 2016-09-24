@@ -20,6 +20,8 @@ gem 'foundation-rails'
 
 # for automated testing
 gem 'rspec-rails', '~>2.0'
+# acceptance tests
+gem 'capybara'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
