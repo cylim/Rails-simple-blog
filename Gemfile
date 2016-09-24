@@ -18,6 +18,9 @@ gem 'record_tag_helper', '~> 1.0'
 gem 'responders', '~> 2.0'
 gem 'foundation-rails'
 
+# for automated testing
+gem 'rspec-rails', '~>2.0'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

@@ -4,8 +4,12 @@
 <% if controller.action_name == "show" %>
  	<%= simple_format post.body %>
  	<p>
- 		<%= link_to 'Edit', edit_post_path(post) %> |
-		<%= link_to 'Back', posts_path %>
+ 		<button class="button">
+ 		<%= link_to 'Edit', edit_post_path(post), class: 'link-to-css' %>
+ 		</button>
+ 		<button class="secondary button">
+		<%= link_to 'Back', posts_path, class: 'link-to-css' %>
+		</button>
  	</p>
 <% end %>
 
@@ -20,10 +24,10 @@
 	</div>
 	<p>
 		<button class="button">
-			<%= link_to 'Edit', edit_post_path(post) %>
+		<%= link_to 'Edit', edit_post_path(post), class: 'link-to-css' %>
 		</button>
-		<button class="button alert">
-			<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+		<button class="alert button">
+		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'link-to-css' %>
 		</button>
 	</p>
 <% end %>
