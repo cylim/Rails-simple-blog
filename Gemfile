@@ -23,6 +23,10 @@ gem 'rspec-rails', '~>2.0'
 # acceptance tests
 gem 'capybara'
 
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
