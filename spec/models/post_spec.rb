@@ -20,4 +20,17 @@ describe Post do
 			end
 		end
 	end
+
+	describe '#content' do
+		let(:markdown_service) { double('MarkdownService') }
+
+		before do
+			MarkdownService.stub(:new) { markdown_service }
+		end
+
+		it 'should convert its body to markdown' do
+			markdown_service.should_receive(:render).with('post body')
+	  		Post.new(body: 'post body').content
+		end
+	end
 end

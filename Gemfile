@@ -23,9 +23,14 @@ gem 'rspec-rails', '~>2.0'
 # acceptance tests
 gem 'capybara'
 
+# Admin Portal
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+
+# Markdown support
+gem 'redcarpet'
+gem 'rouge'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
