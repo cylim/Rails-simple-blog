@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'Posting Comments' do
 	background do
-		@post = Post.create(title: 'Awesome', body: 'test text')
+		@post = Post.create(title: 'Awesome', body: 'test text', published: true)
 	end
 
 	scenario 'Posting a comment' do
