@@ -1,5 +1,6 @@
 <%= post.created_at.strftime("%d %b %y") %><br/>
  <h2><%= link_to_unless_current post.title, post %></h2>
+ <h3> Posted by: <%= post.author_name %></h3>
  
 
  <% if controller.action_name == "show" %>

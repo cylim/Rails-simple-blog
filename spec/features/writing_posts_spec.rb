@@ -20,6 +20,7 @@ feature 'Writing blog posts' do
 	scenario 'Writing a blog post in markdown' do
 		click_link 'Posts'
 		click_link 'New Post'
+		select('admin@example.com', from: 'Author')
 
 		fill_in 'post_title', with: 'Markdown Blog Post'
 		fill_in 'post_body', with: "[cy](https://cy.my)"
@@ -29,5 +30,6 @@ feature 'Writing blog posts' do
 		visit post_path(Post.last)
 
 		page.should have_link 'cy'
+		expect(page).to have_content 'Posted by: admin@example.com'
 	end
 end

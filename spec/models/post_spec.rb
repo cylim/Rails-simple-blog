@@ -9,6 +9,24 @@ require 'spec_helper'
 # end
 
 describe Post do
+
+	describe '#author_name' do
+		context 'when the author exists' do
+			let(:author) { AdminUser.new }
+			subject { Post.new(author: author).author_name }
+
+			before { author.stub(:name){ "Jane Smith" }}
+
+			it { should eq "Jane Smith"}
+		end
+
+		context 'when the author doesnt exist' do
+			subject { Post.new.author_name }
+
+			it { should eq "Nobody" }
+		end
+	end
+
 	describe 'validations' do
 		subject(:post) { Post.new }
 		before { post.valid? }

@@ -22,8 +22,14 @@ feature 'Reading the Blog' do
 
 	context 'for a published post' do
 		background do
-			@post = Post.create(title: 'Awesome Blog Post', body: 'testing text.', published: true)
-			Post.create(title: 'Another Awesome Post', body: 'another testing text.', published: true)
+			@post = Post.create(title: 'Awesome Blog Post', 
+								body: 'testing text.', 
+								published: true, 
+								author: @admin)
+			Post.create(title: 'Another Awesome Post', 
+						body: 'another testing text.', 
+						published: true, 
+						author: @admin)
 		end
 
 		scenario 'Reading the blog index' do
